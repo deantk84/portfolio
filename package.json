@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deantk84/portfolio.git"
+  },
+  "author": "dean.kurylak@ft.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deantk84/portfolio/issues"
+  },
+  "homepage": "https://github.com/deantk84/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
