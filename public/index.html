@@ -4,14 +4,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>repl.it</title>
+  <title>repl.it</title>
+  <!-- include the widget -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	<script defer src="script.js"></script>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<h1>Photography Portfolio Wireframe</h1>
-<p class="nav">
+  <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+  <div data-netlify-identity-menu></div>
+
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+  <div data-netlify-identity-button>Login with Netlify Identity</div>
+  <h1>Photography Portfolio Wireframe</h1>
+  <p class="nav">
 <button id="portfolio1" class="portfolioButton"> Portfolio 1 </button> | <button id="portfolio2" class="portfolioButton"> Portfolio 2 </button> | <button id="portfolio3" class="portfolioButton"> Portfolio 3 </button>
 </p>
 <hr>
