@@ -1,4 +1,3 @@
-const user = netlifyIdentity.currentUser();
 const hidePortfolios = () => {
 	// Todo: Remove the "selected" class from all buttons with the class of "portfolioButton"
  const myButtons = document.querySelectorAll(".portfolioButton")
@@ -46,8 +45,8 @@ document.getElementById("portfolio3").onclick = showPortfolio
 
 document.getElementById("portfolio1").click()
 
-const user = netlifyIdentity.currentUser()
-if (user.app_metadata.roles != 'Member'){
+const netuser = netlifyIdentity.currentUser()
+if (netuser.app_metadata.roles != 'Member'){
     myElementsArray.forEach(element  => element.classList.add("hide"))
 }
 else{
