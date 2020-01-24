@@ -45,8 +45,9 @@ document.getElementById("portfolio3").onclick = showPortfolio
 
 document.getElementById("portfolio1").click()
 
-const netuser = netlifyIdentity.currentUser()
-if (netuser.app_metadata.roles != 'Member'){
+const user = netlifyIdentity.currentUser()
+console.log(user.app_metadata.roles)
+if (user.app_metadata.roles[0] != 'Member'){
     myElementsArray.forEach(element  => element.classList.add("hide"))
 }
 else{
