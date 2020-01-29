@@ -51,9 +51,3 @@ if (user.app_metadata.roles[0] === 'Member'){
 else{
 	console.log('Please sign in') 
 }
-
-netlifyIdentity.on('login', user => {
-	console.log('login', user));
-	document.getElementById("portfolio1").click()
-    // Todo: Show the first portfolio
-}
