@@ -38,16 +38,19 @@ const showPortfolio = (event) => {
 }
 hidePortfolios()
 
+document.getElementById("portfolio1").onclick = showPortfolio
+document.getElementById("portfolio2").onclick = showPortfolio
+document.getElementById("portfolio3").onclick = showPortfolio
 
-const user = netlifyIdentity.currentUser()
-console.log(user.app_metadata.roles)
-if (user.app_metadata.roles[0] === 'Member'){
-	document.getElementById("portfolio1").onclick = showPortfolio
-	document.getElementById("portfolio2").onclick = showPortfolio
-	document.getElementById("portfolio3").onclick = showPortfolio
+const user = netlifyIdentity.currentUser();
+
+netlifyIdentity.on('login', user => {
+	console.log('login', user));
 	document.getElementById("portfolio1").click()
-	// If signed in, hide link to sign in
+    // Todo: Show the first portfolio
 }
-else{
-	console.log('Please sign in') 
+
+netlifyIdentity.on('logout', () => {
+	hidePortfolios()
+    // Todo: Show the first portfolio
 }
