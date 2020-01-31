@@ -1,8 +1,8 @@
 const hidePortfolios = () => {
 	// Todo: Remove the "selected" class from all buttons with the class of "portfolioButton"
- const myButtons = document.querySelectorAll(".portfolioButton")
- const myButtonsArray = Array.from(myButtons)
- myButtonsArray.forEach(element => element.classList.remove("selected"))
+ 	const myButtons = document.querySelectorAll(".portfolioButton")
+ 	const myButtonsArray = Array.from(myButtons)
+ 	myButtonsArray.forEach(element => element.classList.remove("selected"))
 
 	// "all portfolio divs" ==> get all elements with the class of "preview"
 	const myElements = document.getElementsByClassName("preview")
@@ -16,6 +16,7 @@ const hidePortfolios = () => {
 	// how do we hide them? We give them the "hide" class	
 	// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 	myElementsArray.forEach(element  => element.classList.add("hide"))
+	myButtonsArray.forEach(element => element.classList.add("hide"))
 }
 
 const showPortfolio = (event) => {
@@ -44,10 +45,14 @@ document.getElementById("portfolio3").onclick = showPortfolio
 
 const user = netlifyIdentity.currentUser();
 
+if (user.app_metadata.roles[0] === 'Member'){
+	// if signed in show UI
+	myButtonsArray.forEach(element => element.classList.remove("hide"))
+}
+
 netlifyIdentity.on('login', user => {
 	console.log('login', user);
 	document.getElementById("portfolio1").click()
-    // Todo: Show the first portfolio
 })
 
 netlifyIdentity.on('logout', () => {
