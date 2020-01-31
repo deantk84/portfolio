@@ -1,22 +1,25 @@
+const myButtons = document.querySelectorAll(".portfolioButton")
+const myButtonsArray = Array.from(myButtons)
+
+// "all portfolio divs" ==> get all elements with the class of "preview"
+const myElements = document.getElementsByClassName("preview")
+// a list of DOM elements
+
+const myElementsArray = Array.from(myElements)
+// a Javascript Array
+
+
 const hidePortfolios = () => {
 	// Todo: Remove the "selected" class from all buttons with the class of "portfolioButton"
- 	const myButtons = document.querySelectorAll(".portfolioButton")
- 	const myButtonsArray = Array.from(myButtons)
- 	myButtonsArray.forEach(element => element.classList.remove("selected"))
-
-	// "all portfolio divs" ==> get all elements with the class of "preview"
-	const myElements = document.getElementsByClassName("preview")
-	// a list of DOM elements
-	
-	const myElementsArray = Array.from(myElements)
-	// a Javascript Array
-
-
+	myButtonsArray.forEach(element => {
+		element.classList.remove("selected")
+		element.classList.add("hide")
+	})
 
 	// how do we hide them? We give them the "hide" class	
 	// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 	myElementsArray.forEach(element  => element.classList.add("hide"))
-	myButtonsArray.forEach(element => element.classList.add("hide"))
+
 }
 
 const showPortfolio = (event) => {
