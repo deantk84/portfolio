@@ -45,12 +45,11 @@ document.getElementById("portfolio3").onclick = showPortfolio
 const user = netlifyIdentity.currentUser();
 
 netlifyIdentity.on('login', user => {
-	console.log('login', user));
+	console.log('login', user);
 	document.getElementById("portfolio1").click()
     // Todo: Show the first portfolio
-}
+})
 
 netlifyIdentity.on('logout', () => {
 	hidePortfolios()
-    // Todo: Show the first portfolio
-}
+})
