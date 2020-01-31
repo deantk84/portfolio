@@ -48,7 +48,7 @@ document.getElementById("portfolio3").onclick = showPortfolio
 
 const user = netlifyIdentity.currentUser();
 
-if (user.app_metadata.roles[0] === 'Member'){
+if (user && user.app_metadata.roles[0] === 'Member'){
 	// if signed in show UI
 	myButtonsArray.forEach(element => element.classList.remove("hide"))
 }
