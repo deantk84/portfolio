@@ -1,6 +1,13 @@
 const myButtons = document.querySelectorAll(".portfolioButton")
 const myButtonsArray = Array.from(myButtons)
 
+const hideButtons = () => {}
+myButtonsArray.forEach(element => {
+	element.classList.remove("selected")
+	element.classList.add("hide")
+})
+}
+
 // "all portfolio divs" ==> get all elements with the class of "preview"
 const myElements = document.getElementsByClassName("preview")
 // a list of DOM elements
@@ -11,10 +18,7 @@ const myElementsArray = Array.from(myElements)
 
 const hidePortfolios = () => {
 	// Todo: Remove the "selected" class from all buttons with the class of "portfolioButton"
-	myButtonsArray.forEach(element => {
-		element.classList.remove("selected")
-		element.classList.add("hide")
-	})
+
 
 	// how do we hide them? We give them the "hide" class	
 	// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
