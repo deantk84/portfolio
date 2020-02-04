@@ -1,7 +1,7 @@
 const myButtons = document.querySelectorAll(".portfolioButton")
 const myButtonsArray = Array.from(myButtons)
 
-const hideButtons = () => {}
+const hideButtons = () => {
 myButtonsArray.forEach(element => {
 	element.classList.remove("selected")
 	element.classList.add("hide")
