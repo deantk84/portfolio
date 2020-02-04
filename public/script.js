@@ -18,8 +18,6 @@ const myElementsArray = Array.from(myElements)
 
 const hidePortfolios = () => {
 	// Todo: Remove the "selected" class from all buttons with the class of "portfolioButton"
-
-
 	// how do we hide them? We give them the "hide" class	
 	// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 	myElementsArray.forEach(element  => element.classList.add("hide"))
@@ -45,6 +43,7 @@ const showPortfolio = (event) => {
 	document.querySelector(portfolioToShow).classList.remove("hide")
 }
 hidePortfolios()
+hideButtons()
 
 document.getElementById("portfolio1").onclick = showPortfolio
 document.getElementById("portfolio2").onclick = showPortfolio
@@ -65,4 +64,5 @@ netlifyIdentity.on('login', user => {
 
 netlifyIdentity.on('logout', () => {
 	hidePortfolios()
+	hideButtons()
 })
