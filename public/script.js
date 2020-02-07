@@ -9,7 +9,7 @@ myButtonsArray.forEach(element => {
 }
 
 // "all portfolio divs" ==> get all elements with the class of "preview"
-const myElements = document.getElementsByClassName("preview")
+const myElements = document.querySelectorAll(".preview")
 // a list of DOM elements
 
 const myElementsArray = Array.from(myElements)
@@ -43,22 +43,26 @@ const showPortfolio = (event) => {
 	document.querySelector(portfolioToShow).classList.remove("hide")
 }
 hidePortfolios()
-hideButtons()
 
 document.getElementById("portfolio1").onclick = showPortfolio
 document.getElementById("portfolio2").onclick = showPortfolio
 document.getElementById("portfolio3").onclick = showPortfolio
+hideButtons()
 
-const user = netlifyIdentity.currentUser();
+const user = netlifyIdentity.currentUser()
 
-if (user && user.app_metadata.roles[0] === 'Member'){
-	// if signed in show UI
+if  (user
+	&& user.app_metadata
+    && user.app_metadata.roles
+    && user.app_metadata.roles.length
+    && user.app_metadata.roles[0] === 'Member'){
 	myButtonsArray.forEach(element => element.classList.remove("hide"))
 	document.getElementById("portfolio1").click()
 }
 
 netlifyIdentity.on('login', user => {
 	console.log('login', user);
+	
 	document.getElementById("portfolio1").click()
 })
 
