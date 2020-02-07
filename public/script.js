@@ -62,7 +62,7 @@ if  (user
 
 netlifyIdentity.on('login', user => {
 	console.log('login', user);
-	
+	myButtonsArray.forEach(element => element.classList.remove("hide"))
 	document.getElementById("portfolio1").click()
 })
 
