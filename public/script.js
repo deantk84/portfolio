@@ -64,7 +64,7 @@ authenticateUser(user)
 
 netlifyIdentity.on('login', user => {
 	console.log('login', user);
-	authenticateUser()
+	authenticateUser(user)
 })
 
 netlifyIdentity.on('logout', () => {
