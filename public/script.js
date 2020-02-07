@@ -51,6 +51,7 @@ hideButtons()
 
 const user = netlifyIdentity.currentUser()
 
+const authenticateUser = (user) => {
 if  (user
 	&& user.app_metadata
     && user.app_metadata.roles
@@ -58,12 +59,11 @@ if  (user
     && user.app_metadata.roles[0] === 'Member'){
 	myButtonsArray.forEach(element => element.classList.remove("hide"))
 	document.getElementById("portfolio1").click()
-}
+}}
 
 netlifyIdentity.on('login', user => {
 	console.log('login', user);
-	myButtonsArray.forEach(element => element.classList.remove("hide"))
-	document.getElementById("portfolio1").click()
+	authenticateUser()
 })
 
 netlifyIdentity.on('logout', () => {
