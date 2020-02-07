@@ -27,7 +27,9 @@ const hidePortfolios = () => {
 const showPortfolio = (event) => {
 	hidePortfolios()		
 	const clickedElementId = `#${event.target.id}`
-
+	myButtonsArray.forEach(element => {
+		element.classList.remove("selected")
+	})
 
 	// Todo: Add the "selected" class to whichever button was clicked
 	// document.getElementById(clickedElementId).doSomething???
