@@ -1,6 +1,12 @@
 const myButtons = document.querySelectorAll(".portfolioButton")
 const myButtonsArray = Array.from(myButtons)
 
+function hashHandler() {
+	console.log('The hash has changed!');
+  }
+  
+  window.addEventListener('hashchange', hashHandler, false);
+
 const hideButtons = () => {
 myButtonsArray.forEach(element => {
 	element.classList.remove("selected")
