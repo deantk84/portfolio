@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "dev": "node server.js"
+    "dev": "netlify dev"
   },
   "repository": {
     "type": "git",

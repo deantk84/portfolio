@@ -43,6 +43,7 @@ const showPortfolio = (event) => {
 	// show that portfolio div
 	// portfolioToShow ==> classname ==> remove class "hide"
 	document.querySelector(portfolioToShow).classList.remove("hide")
+	window.location.hash = `${clickedElementId}`
 }
 hidePortfolios()
 
@@ -60,7 +61,10 @@ if  (user
     && user.app_metadata.roles.length
     && user.app_metadata.roles[0] === 'Member'){
 	myButtonsArray.forEach(element => element.classList.remove("hide"))
-	document.getElementById("portfolio1").click()
+	debugger
+	const hash = window.location.hash || '#portfolio1'
+	const portfolioToShow = document.querySelector(hash)
+	portfolioToShow.click()
 }}
 authenticateUser(user)
 
